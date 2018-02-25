@@ -24,6 +24,9 @@ and other projects
 
 %install 
 %__python setup.py install --root=%{buildroot} --record=FILE_LIST
+# Drop python2 dep
+rm -rf %{buildroot}%{py_sitedir}/astroid/tests/testdata/python2
+rm -rf %{buildroot}%{py_sitedir}/astroid/tests/testdata/python3/data/*py2.5*egg*
 
 %files
 %{py_sitedir}/astroid
