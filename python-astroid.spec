@@ -1,8 +1,12 @@
+# Doesn't work because of test cases intentionally containing
+# bits that can't be compiled (invalid-encoding.py)
+%define _python_bytecompile_errors_terminate_build 0
+
 %define module	astroid
   
 Summary:	Base representation of python source code for pylint and others
 Name:		python-astroid
-Version:	1.6.1
+Version:	1.6.3
 Release:	1
 Group:		Development/Python
 License:	Python
