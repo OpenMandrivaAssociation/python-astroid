@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   astroid-1.6.3.tar.gz: ae45d917fca8b72c026888786f60c665d02eab1e
+sources:
+  astroid-2.1.0.tar.gz: ac519ddec365cf36ca26e175999e5c92b9c1eda6

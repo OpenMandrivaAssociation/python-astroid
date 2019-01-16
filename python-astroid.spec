@@ -6,12 +6,12 @@
   
 Summary:	Base representation of python source code for pylint and others
 Name:		python-astroid
-Version:	1.6.3
-Release:	2
+Version:	2.1.0
+Release:	1
 Group:		Development/Python
 License:	Python
 Url:		https://github.com/PyCQA/astroid
-Source0:	https://github.com/PyCQA/astroid/archive/astroid-%{version}.tar.gz
+Source0:	https://pypi.io/packages/source/a/astroid/astroid-%{version}.tar.gz
 BuildArch:	noarch 
 BuildRequires:	python-setuptools
 BuildRequires:	pkgconfig(python3)
@@ -24,14 +24,14 @@ and other projects
 %setup -qn %{module}-%{module}-%{version}
   
 %build
-%__python setup.py build
+%__%py_build
 
 %install 
-%__python setup.py install --root=%{buildroot} --record=FILE_LIST
+%__%py_install --record=FILE_LIST
 # Drop python2 dep
-rm -rf %{buildroot}%{py_sitedir}/astroid/tests/testdata/python2
-rm -rf %{buildroot}%{py_sitedir}/astroid/tests/testdata/python3/data/*py2.5*egg*
+rm -rf %{buildroot}%{py_puresitedir}/astroid/tests/testdata/python2
+rm -rf %{buildroot}%{py_puresitedir}/astroid/tests/testdata/python3/data/*py2.5*egg*
 
 %files
-%{py_sitedir}/astroid
-%{py_sitedir}/astroid*.egg-info
+%{py_puresitedir}/astroid
+%{py_puresitedir}/astroid*.egg-info
