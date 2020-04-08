@@ -21,7 +21,7 @@ A common base representation of python source code for pylint
 and other projects
 
 %prep
-%setup -qn %{module}-%{module}-%{version}
+%setup -qn %{module}-%{version}
   
 %build
 %__python setup.py build
