@@ -32,6 +32,8 @@ and other projects
 rm -rf %{buildroot}%{py_sitedir}/astroid/tests/testdata/python2
 rm -rf %{buildroot}%{py_sitedir}/astroid/tests/testdata/python3/data/*py2.5*egg*
 
+rm -rf %{buildroot}%{python3_sitelib}/astroid/tests
+
 %files
 %{py_sitedir}/astroid
 %{py_sitedir}/astroid*.egg-info
