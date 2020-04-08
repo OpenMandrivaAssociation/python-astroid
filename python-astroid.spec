@@ -37,3 +37,4 @@ rm -rf %{buildroot}%{python3_sitelib}/astroid/tests
 %files
 %{py_sitedir}/astroid
 %{py_sitedir}/astroid*.egg-info
+%{python_sitelib}/tests/*
