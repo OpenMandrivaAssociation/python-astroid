@@ -6,8 +6,6 @@
   
 Summary:	Base representation of python source code for pylint and others
 Name:		python-astroid
-#USED LATEST GIT: 03.04.2020 to fix 
-#conflicting requests - nothing provides (python3.8dist(wrapt) >= 1.11 with python3.8dist(wrapt) < 1.12) needed by python-astroid-2.3.3-4.noarch
 Version:	2.4.2
 Release:	1
 Group:		Development/Python
@@ -39,4 +37,4 @@ rm -rf %{buildroot}%{python3_sitelib}/astroid/tests
 %files
 %{py_sitedir}/astroid
 %{py_sitedir}/astroid*.egg-info
-%{python_sitelib}/tests/*
+#{python_sitelib}/tests/*
