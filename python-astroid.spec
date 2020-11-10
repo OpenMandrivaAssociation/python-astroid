@@ -13,7 +13,7 @@ Release:	1
 Group:		Development/Python
 License:	Python
 Url:		https://github.com/PyCQA/astroid
-Source0:	https://github.com/PyCQA/astroid/archive/astroid-astrodi-%{version}.tar.gz
+Source0:	https://github.com/PyCQA/astroid/archive/%{module}-%{module}-%{version}.tar.gz
 BuildArch:	noarch 
 BuildRequires:	python-setuptools
 BuildRequires:	pkgconfig(python)
