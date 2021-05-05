@@ -11,7 +11,7 @@ Release:	1
 Group:		Development/Python
 License:	Python
 Url:		https://github.com/PyCQA/astroid
-Source0:	https://github.com/PyCQA/astroid/archive/%{module}-%{module}-%{version}.tar.gz
+Source0:	https://github.com/PyCQA/astroid/archive/%{module}-%{version}.tar.gz
 Patch0:   https://patch-diff.githubusercontent.com/raw/PyCQA/astroid/pull/801.patch
 BuildArch:	noarch 
 BuildRequires:	python-setuptools
@@ -22,7 +22,7 @@ A common base representation of python source code for pylint
 and other projects
 
 %prep
-%setup -qn %{module}-%{module}-%{version}
+%setup -qn %{module}-%{version}
 %autopatch -p1
   
 %build
