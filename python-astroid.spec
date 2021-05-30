@@ -11,7 +11,7 @@ Release:	1
 Group:		Development/Python
 License:	Python
 Url:		https://github.com/PyCQA/astroid
-Source0:	https://github.com/PyCQA/astroid/archive/%{module}-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/0b/9e/214759befde32cfb214d265cbf163620e7c711b9b4b40533acf9a780252a/astroid-%{version}.tar.gz
 #Patch0:   https://patch-diff.githubusercontent.com/raw/PyCQA/astroid/pull/801.patch
 BuildArch:	noarch 
 BuildRequires:	python-setuptools
