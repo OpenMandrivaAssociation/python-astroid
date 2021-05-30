@@ -16,6 +16,8 @@ Source0:	https://github.com/PyCQA/astroid/archive/%{module}-%{version}.tar.gz
 BuildArch:	noarch 
 BuildRequires:	python-setuptools
 BuildRequires:	pkgconfig(python)
+BuildRequires:  python3dist(wheel)
+BuildRequires:  python3dist(pip)
  
 %description 
 A common base representation of python source code for pylint
