@@ -6,12 +6,12 @@
   
 Summary:	Base representation of python source code for pylint and others
 Name:		python-astroid
-Version:	2.6.5
+Version:	2.8.5
 Release:	1
 Group:		Development/Python
 License:	Python
 Url:		https://github.com/PyCQA/astroid
-Source0:	https://files.pythonhosted.org/packages/0b/9e/214759befde32cfb214d265cbf163620e7c711b9b4b40533acf9a780252a/astroid-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/97/ce/2de2a08eb1d972b115c4f54511f774cfdfb94967529d99cf56b1696429e1/astroid-2.8.5.tar.gz
 #Patch0:   https://patch-diff.githubusercontent.com/raw/PyCQA/astroid/pull/801.patch
 BuildArch:	noarch 
 BuildRequires:	python-setuptools
