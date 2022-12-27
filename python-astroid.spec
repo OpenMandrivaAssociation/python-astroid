@@ -6,7 +6,7 @@
   
 Summary:	Base representation of python source code for pylint and others
 Name:		python-astroid
-Version:	2.12.12
+Version:	2.12.13
 Release:	1
 Group:		Development/Python
 License:	Python
