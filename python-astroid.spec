@@ -1,3 +1,5 @@
+%undefine _debugsource_packages
+
 # Doesn't work because of test cases intentionally containing
 # bits that can't be compiled (invalid-encoding.py)
 %define _python_bytecompile_errors_terminate_build 0
