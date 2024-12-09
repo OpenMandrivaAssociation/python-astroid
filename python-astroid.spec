@@ -8,7 +8,7 @@
   
 Summary:	Base representation of python source code for pylint and others
 Name:		python-astroid
-Version:	3.3.5
+Version:	3.3.6
 Release:	1
 Group:		Development/Python
 License:	Python
