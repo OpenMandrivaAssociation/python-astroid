@@ -9,7 +9,7 @@
 
 Name:		python-astroid
 Version:	3.3.9
-Release:	1
+Release:	2
 Summary:	An abstract syntax tree for Python with inference support
 URL:		https://pypi.org/project/astroid/
 License:	LGPL-2.1-or-later
