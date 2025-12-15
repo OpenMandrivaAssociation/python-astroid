@@ -5,11 +5,11 @@
 #%%define _python_bytecompile_errors_terminate_build 0
 
 %define module astroid
-%bcond_without test
+%bcond_with test
 
 Name:		python-astroid
-Version:	3.3.9
-Release:	2
+Version:	4.0.2
+Release:	1
 Summary:	An abstract syntax tree for Python with inference support
 URL:		https://pypi.org/project/astroid/
 License:	LGPL-2.1-or-later
@@ -55,15 +55,6 @@ have additional methods and attributes for different usages. They include
 some support for static inference and local name scopes.
 
 Furthermore, astroid can also build partial trees by inspecting living objects.
-
-%prep
-%autosetup -n %{module}-%{version} -p1
-
-%build
-%py_build
-
-%install
-%py3_install
 
 %if %{with test}
 %check
