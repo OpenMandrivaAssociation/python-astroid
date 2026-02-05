@@ -8,18 +8,19 @@
 %bcond_with test
 
 Name:		python-astroid
-Version:	4.0.2
+Version:	4.0.3
 Release:	1
 Summary:	An abstract syntax tree for Python with inference support
 URL:		https://pypi.org/project/astroid/
 License:	LGPL-2.1-or-later
 Group:		Development/Python
-Source0:	https://files.pythonhosted.org/packages/source/a/astroid/astroid-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/source/a/%{module}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 BuildSystem:	python
 BuildArch:	noarch
 
 BuildRequires:	python
 BuildRequires:	pkgconfig(python3)
+BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(wheel)
 BuildRequires:	python%{pyver}dist(typing-extensions) >= 4.4.0
