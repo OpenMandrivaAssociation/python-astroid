@@ -8,7 +8,7 @@
 %bcond_with test
 
 Name:		python-astroid
-Version:	4.0.3
+Version:	4.1.0
 Release:	1
 Summary:	An abstract syntax tree for Python with inference support
 URL:		https://pypi.org/project/astroid/
