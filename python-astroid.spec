@@ -5,10 +5,13 @@
 #%%define _python_bytecompile_errors_terminate_build 0
 
 %define module astroid
-%bcond_with test
+# our packaged version of numpy is too new for the tests,
+# numpy, pydantic + other tests give flaky results,
+# disable tests on ABF
+%bcond test 0
 
 Name:		python-astroid
-Version:	4.1.0
+Version:	4.1.1
 Release:	1
 Summary:	An abstract syntax tree for Python with inference support
 URL:		https://pypi.org/project/astroid/
@@ -61,11 +64,13 @@ Furthermore, astroid can also build partial trees by inspecting living objects.
 %check
 # for why skip test_pydantic_field see:
 # https://github.com/pylint-dev/astroid/issues/2392
+export CI=true
+export PYTHONPATH="%{buildroot}%{python_sitelib}:${PWD}"
 pytest -v -k "not test_pydantic_field"
 %endif
 
 %files
 %{py_sitedir}/%{module}
-%{py_sitedir}/%{module}-%{version}*.*-info
+%{py_sitedir}/%{module}-%{version}.dist-info
 %license LICENSE
 %doc README.rst
