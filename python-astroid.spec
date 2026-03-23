@@ -1,49 +1,22 @@
-#%%undefine _debugsource_packages
-
-# Doesn't work because of test cases intentionally containing
-# bits that can't be compiled (invalid-encoding.py)
-#%%define _python_bytecompile_errors_terminate_build 0
-
 %define module astroid
-# our packaged version of numpy is too new for the tests,
-# numpy, pydantic + other tests give flaky results,
-# disable tests on ABF
-%bcond test 0
 
 Name:		python-astroid
-Version:	4.1.1
+Version:	4.1.2
 Release:	1
 Summary:	An abstract syntax tree for Python with inference support
-URL:		https://pypi.org/project/astroid/
 License:	LGPL-2.1-or-later
 Group:		Development/Python
+URL:		https://pypi.org/project/astroid/
 Source0:	https://files.pythonhosted.org/packages/source/a/%{module}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
+
 BuildSystem:	python
 BuildArch:	noarch
-
 BuildRequires:	python
 BuildRequires:	pkgconfig(python3)
+BuildRequires:	python%{pyver}dist(mypy)
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(wheel)
-BuildRequires:	python%{pyver}dist(typing-extensions) >= 4.4.0
-%if %{with test}
-BuildRequires:	python%{pyver}dist(mypy)
-BuildRequires:	python%{pyver}dist(attrs)
-BuildRequires:	python%{pyver}dist(coverage)
-BuildRequires:	python%{pyver}dist(nose)
-BuildRequires:	python%{pyver}dist(numpy)
-BuildRequires:	python%{pyver}dist(pyqt6)
-BuildRequires:	python%{pyver}dist(pydantic)
-BuildRequires:	python%{pyver}dist(pytest)
-BuildRequires:	python%{pyver}dist(python-dateutil)
-BuildRequires:	python%{pyver}dist(regex)
-BuildRequires:	python%{pyver}dist(setuptools)
-BuildRequires:	python%{pyver}dist(six)
-BuildRequires:	python%{pyver}dist(typing-extensions) >= 4.4.0
-BuildRequires:	python%{pyver}dist(urllib3)
-%endif
-Requires:	python%{pyver}dist(typing-extensions) >= 4.4.0
 
 %description
 An abstract syntax tree for Python with inference support.
@@ -60,17 +33,12 @@ some support for static inference and local name scopes.
 
 Furthermore, astroid can also build partial trees by inspecting living objects.
 
-%if %{with test}
-%check
-# for why skip test_pydantic_field see:
-# https://github.com/pylint-dev/astroid/issues/2392
-export CI=true
-export PYTHONPATH="%{buildroot}%{python_sitelib}:${PWD}"
-pytest -v -k "not test_pydantic_field"
-%endif
+%prep -a
+# Remove bundled egg-info
+rm -rf %{module}.egg-info
 
 %files
-%{py_sitedir}/%{module}
-%{py_sitedir}/%{module}-%{version}.dist-info
-%license LICENSE
 %doc README.rst
+%license LICENSE
+%{python_sitelib}/%{module}
+%{python_sitelib}/%{module}-%{version}.dist-info
