@@ -1,13 +1,13 @@
 %define module astroid
 
 Name:		python-astroid
-Version:	4.1.2
+Version:	4.2.0
 Release:	1
 Summary:	An abstract syntax tree for Python with inference support
 License:	LGPL-2.1-or-later
 Group:		Development/Python
-URL:		https://pypi.org/project/astroid/
-Source0:	https://files.pythonhosted.org/packages/source/a/%{module}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
+URL:		https://github.com/pylint-dev/astroid
+Source0:	%{URL}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildSystem:	python
 BuildArch:	noarch
@@ -33,9 +33,9 @@ some support for static inference and local name scopes.
 
 Furthermore, astroid can also build partial trees by inspecting living objects.
 
-%prep -a
+%dnl %prep -a
 # Remove bundled egg-info
-rm -rf %{module}.egg-info
+%dnl rm -rf %{module}.egg-info
 
 %files
 %doc README.rst
