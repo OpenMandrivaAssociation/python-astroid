@@ -1,7 +1,7 @@
 %define module astroid
 
 Name:		python-astroid
-Version:	4.2.0
+Version:	4.3.4
 Release:	1
 Summary:	An abstract syntax tree for Python with inference support
 License:	LGPL-2.1-or-later
@@ -13,7 +13,6 @@ BuildSystem:	python
 BuildArch:	noarch
 BuildRequires:	python
 BuildRequires:	pkgconfig(python3)
-BuildRequires:	python%{pyver}dist(mypy)
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(wheel)
